@@ -1,0 +1,24 @@
+.bill-details {
+  display: inline-flex;
+  margin: 5px;
+  border-radius: 15px;
+  border: 1px solid;
+}
+
+.bill-details h3 {
+  border-radius: 15px;
+  background-color: gray;
+  padding: 15px;
+  margin: 0;
+  color: white;
+}
+
+.bill p {
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 6px;
+}
+
+.unpaid-bill {
+  color: red;
+}
