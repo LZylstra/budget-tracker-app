@@ -1,0 +1,71 @@
+.Header {
+    height: 100px;
+    text-align: center;
+    background-color: #3b5360;
+  }
+  .Header h1 {
+    margin: 0;
+    padding-top: 15px;
+    text-align: center;
+    color: #d6b0b1;
+  }
+  
+  .Header_loggedIn {
+    display: inline-flex;
+    color: #d6b0b1;
+  }
+  
+  .Header h1, a {
+    text-decoration: none;
+    color: #d6b0b1;
+  }
+  
+  #app-name{
+      text-align: center;
+  }
+
+  .links {
+    padding-right: 0.8em;
+    padding-top: 1em;
+    color: #d6b0b1;
+  }
+  .menu-item {
+    padding: 10px;
+    color: #d6b0b1;
+  }
+  
+  .menu-icon {
+    padding-top: 10px;
+    margin: 10px;
+  }
+  
+  .Header_loggedIn {
+    padding-top: 10px;
+  }
+  
+  @media screen and (min-width: 680px) {
+    .Header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .Header h1 {
+      font-size: 22pt;
+      margin-left: 20px;
+    }
+    .Header a {
+      padding-bottom: 10px;
+    }
+    .links {
+      padding-right: 35px;
+    }
+    .Header_loggedIn {
+      margin-right: 20px;
+    }
+  }
+  @media screen and (min-width: 617px) {
+    .Header {
+      height: 80px;
+    }
+  }
+  

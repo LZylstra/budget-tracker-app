@@ -1,0 +1,9 @@
+.LoginPage {
+    width: 450px;
+    margin: auto;
+    color:#8b5e83;
+  }
+  
+.LoginPage h2{
+    text-align: center;
+}

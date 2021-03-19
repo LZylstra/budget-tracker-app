@@ -1,0 +1,15 @@
+.app_description{
+    text-align: center;
+    color: #351f39;
+    font-size: 35px
+}
+
+#landing-img {
+    max-width: 80%;
+    padding: 15px;
+    margin: auto;
+    display: block;
+    border: 5px ridge white;
+    box-shadow: 10px 10px 20px black;
+    margin-bottom: 30px;
+  }
