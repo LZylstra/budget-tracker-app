@@ -1,23 +1,23 @@
 .Header {
     height: 100px;
     text-align: center;
-    background-color: #3b5360;
+    background-color: #a1cae2;
   }
   .Header h1 {
     margin: 0;
     padding-top: 15px;
     text-align: center;
-    color: #d6b0b1;
+    color: black;
   }
   
   .Header_loggedIn {
     display: inline-flex;
-    color: #d6b0b1;
+    color: black;
   }
   
   .Header h1, a {
     text-decoration: none;
-    color: #d6b0b1;
+    color: black;
   }
   
   #app-name{
@@ -27,11 +27,11 @@
   .links {
     padding-right: 0.8em;
     padding-top: 1em;
-    color: #d6b0b1;
+    color: black;
   }
   .menu-item {
     padding: 10px;
-    color: #d6b0b1;
+    color: black;
   }
   
   .menu-icon {
