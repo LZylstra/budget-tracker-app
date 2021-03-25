@@ -1,0 +1,15 @@
+.tag {
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: darkslategray;
+  margin-top: 50px;
+  text-align: center;
+  border: 2px solid black;
+  box-shadow: 5px 10px 18px #888888;
+  margin-bottom: 50px;
+}
+
+.tag:hover {
+  background-color: dimgray;
+}

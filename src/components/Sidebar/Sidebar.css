@@ -1,0 +1,7 @@
+.sidebar {
+  height: 100vh; /* Nice to not have to think about the HTML element parent */
+  margin: 0;
+  width: 200px;
+  background-color: darkgrey;
+  position: absolute;
+}
