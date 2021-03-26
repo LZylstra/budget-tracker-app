@@ -8,7 +8,7 @@ import "./UserHome.css";
 class UserHome extends Component {
   render() {
     return (
-      <div>
+      <div className="user_home">
         <Sidebar />
         <div className="middlesection">
           <Tile title="Bills Summary" />

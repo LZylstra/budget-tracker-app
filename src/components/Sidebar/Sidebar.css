@@ -1,7 +1,18 @@
+.sidebar{
+  display:flex;
+  flex-wrap: wrap;
+  background: rgb(152,222,217);
+  background: linear-gradient(360deg, rgba(152,222,217,1) 32%, rgba(199,255,216,1) 100%);
+}
+
+
+@media screen and (min-width: 680px) {
+
 .sidebar {
-  height: 100vh; /* Nice to not have to think about the HTML element parent */
+  height: 100vh; 
   margin: 0;
   width: 200px;
-  background-color: darkgrey;
+
   position: absolute;
 }
+  }

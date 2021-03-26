@@ -1,7 +1,7 @@
 .Header {
     height: 100px;
     text-align: center;
-    background-color: #a1cae2;
+    background-color: var(--color-background2);
   }
   .Header h1 {
     margin: 0;

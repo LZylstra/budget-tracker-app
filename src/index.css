@@ -11,3 +11,13 @@ h3,
 h4 {
   font-family: "Stint Ultra Expanded", serif;
 }
+
+:root{
+  --color-light-accent: #f6f6f6;
+  --color-background1: #c7ffd8;
+  --color-background2: #98ded9;
+  --color-dark-accent: #161d6f;
+  --color-lighter-blue: #7588D1;
+  --color-pink-accent: #C8ADC0;
+  --color-background3: #A28F9D;
+}

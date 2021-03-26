@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import coverImg from "../../img/landingpage.jpg"
+import coverImg from "../../img/landingpage2.jpg"
 import "./LandingPage.css";
 
 
