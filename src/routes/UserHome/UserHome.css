@@ -1,12 +1,1 @@
 
-
-  @media screen and (min-width: 680px) {
-.middlesection {
-  position: absolute;
-  left: 250px;
-  width: 100%;
-  background-color: var(--color-light-accent);
-}
-
-
-  }

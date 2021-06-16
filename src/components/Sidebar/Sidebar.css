@@ -14,5 +14,10 @@
   width: 200px;
 
   position: absolute;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
 }
   }
