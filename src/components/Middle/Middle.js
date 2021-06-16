@@ -1,26 +1,35 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import Tile from "../../components/Tile/Tile";
+import ExpensesPage from "../../routes/ExpensesPage/ExpensesPage"
+import BillPage from "../../routes/BillPage/BillPage"
+import SavingsPage from "../../routes/SavingsPage/SavingsPage"
+import DebtPage from "../../routes/DebtPage/DebtPage";
+import Home from "../Home/Home"
 import "./Middle.css";
 
-class UserHome extends Component {
-  
+
+class Middle extends Component {
+
+
+
   render() {
+    let page = this.props.pageShown;
+    console.log(page)
+    //   {page === 'home' ? this.renderHome() : <ExpensesPage/>}
+
     return (
 
+      <div className="middlesection">
+          {page==='expenses'? <ExpensesPage/> : 
+            page === 'savings' ? <SavingsPage/> :
+              page=== 'debt' ? <DebtPage/> : 
+                page === 'bills' ? <BillPage/> : <Home/>}
 
-        <div className="middlesection">
-            <div className="middletiles">
-            <Tile title="Bills Summary" />
-            <Tile title="Debt Summary" />
-            <Tile title="Savings Summary" />
-            <Tile title="Expenses Summary" />
-            </div>
+      </div>
 
-        </div>
-
-    );
+      );
   }
 }
 
-export default withRouter(UserHome);
+export default withRouter(Middle);

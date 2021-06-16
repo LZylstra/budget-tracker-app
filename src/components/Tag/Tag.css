@@ -1,6 +1,9 @@
 .tag:hover {
   background-color: rgba(124,165,162,0.5);
 }
+.taglink{
+  
+}
 .tag {
   /* background: rgb(117,136,209);
 background: radial-gradient(circle, rgba(117,136,209,1) 0%, rgba(162,143,157,1) 100%); */

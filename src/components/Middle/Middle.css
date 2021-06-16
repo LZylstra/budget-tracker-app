@@ -1,13 +1,9 @@
 
  .middlesection{
-
      background-color: var(--color-light-accent); 
-    
      display: grid;
      /* width:100%; */
      height:100vh;
-
-
  }
  
  @media screen and (min-width: 680px) {
@@ -16,13 +12,7 @@
       /* max-width: 500px; */
 
      }
-    .middletiles {
-
-      margin: auto;
-    
-    }
-    
-    
-      }
+   
+  }
 
       

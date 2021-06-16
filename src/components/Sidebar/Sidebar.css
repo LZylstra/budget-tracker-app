@@ -4,10 +4,17 @@
   background: rgb(152,222,217);
   background: linear-gradient(360deg, rgba(152,222,217,1) 32%, rgba(199,255,216,1) 100%);
 }
-
+.home-icon{
+  margin-top:15px;
+  margin-left:10px;
+}
 
 @media screen and (min-width: 680px) {
-
+.home-icon{
+  font-size: 60px;
+  padding-top:10px;
+  margin-left:0;
+}
 .sidebar {
   height: 100vh; 
   margin: 0;
