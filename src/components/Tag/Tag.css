@@ -1,5 +1,5 @@
 .tag:hover {
-  background-color: dimgray;
+  background-color: rgba(124,165,162,0.5);
 }
 .tag {
   /* background: rgb(117,136,209);
@@ -10,9 +10,10 @@ background: radial-gradient(circle, rgba(117,136,209,1) 0%, rgba(162,143,157,1) 
   width: 90px;
   text-align: center;
   border-radius: 25px;
-  margin:auto;
+  /* margin:auto; */
   margin-top: 5px;
   margin-bottom: 5px;
+  margin: 10px 20px 10px 20px;
 }
 
 .tag h2{
@@ -22,13 +23,13 @@ background: radial-gradient(circle, rgba(117,136,209,1) 0%, rgba(162,143,157,1) 
 @media screen and (min-width: 680px) {
 .tag {
   width: 90%;
+  height: 50px;
   padding-top: 25px;
   padding-bottom: 25px;
   text-align: center;
   font-size: 15px;
-  margin:auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 .tag h2{
   margin: 15px;
