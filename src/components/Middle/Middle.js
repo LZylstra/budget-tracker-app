@@ -15,7 +15,7 @@ class Middle extends Component {
 
   render() {
     let page = this.props.pageShown;
-    console.log(page)
+   // console.log(page)
     //   {page === 'home' ? this.renderHome() : <ExpensesPage/>}
 
     return (
