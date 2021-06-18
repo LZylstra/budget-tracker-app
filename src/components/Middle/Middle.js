@@ -28,6 +28,7 @@ class Middle extends Component {
                 <Home 
                   savingsList={this.props.savingsList}
                   billsList={this.props.billsList}
+                  debtList={this.props.debtList}
                 />
           }
 

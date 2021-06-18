@@ -25,6 +25,17 @@ class Tile extends Component {
    return newlist
  }
 
+ mapDebtList(list){
+  let newlist;
+    newlist = list.map((allDebt, index) => (
+        allDebt.map((debt, ind)=> (
+        <p key={ind}>{debt.debt_name} : {debt.current_status}</p>
+      )) //end savingArray map
+     
+   ));   
+ return newlist
+}
+
   renderSavings(){
     return (
       <div className="innertilesavings">
@@ -36,7 +47,7 @@ class Tile extends Component {
   renderDebt(){
     return (
       <div className="innertiledebt">
-        <p>Debt</p>
+        {this.mapDebtList(this.props.debtList)}
       </div> 
     ) 
   }
