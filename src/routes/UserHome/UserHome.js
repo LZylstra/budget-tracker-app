@@ -10,6 +10,7 @@ import DebtApiService from "../../services/debt-api-service";
 import CategoryApiService from "../../services/category-api-service";
 import UserBar from "../../components/UserBar/UserBar"
 import currency from "currency.js";
+import ExpenseApiService from "../../services/expenses-api-service";
 
 class UserHome extends Component {
   constructor(props) {
@@ -22,7 +23,8 @@ class UserHome extends Component {
       savingsList: [],
       billsList: [],
       debtList: [],
-      categoryList:[]
+      categoryList:[],
+      expensesList:[]
     };
 
     this.handleButtonChoice = this.handleButtonChoice.bind(this);
@@ -78,11 +80,20 @@ class UserHome extends Component {
           CategoryApiService.getAllCategories(budgets[i].budget_id)
             .then((category)=> {
               if(category.length !== 0){
+               // console.log(category)
                 this.setState(prevState => ({ categoryList: [...prevState.categoryList, category] }))
-              } 
-            } )
-        }        
-
+                
+                for(let c = 0; c < category.length; c++){
+                  ExpenseApiService.getAllExpenses(category[c].category_id)
+                    .then((expenses)=> {
+                      category[c].expenseList = expenses
+                    }) //end api
+                  } //end for c
+                  
+                } //end if
+              }) // end then
+        }//end for
+            
       })
     .catch((error) => {
       console.error({ error });
@@ -98,7 +109,7 @@ class UserHome extends Component {
     const categoryList = this.state.categoryList;
 
    // console.log("home total " + currency(this.state.totalIncome).format())
-   console.log(categoryList)
+   console.log(categoryList) 
 
     return (
       <div className="user_home">
