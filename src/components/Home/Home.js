@@ -14,7 +14,11 @@ class Home extends Component {
             type='bills' 
             billsList={this.props.billsList} 
           />
-          <Tile title="Debt Summary" type='debt'/>
+          <Tile 
+            title="Debt Summary" 
+            type='debt'
+            debtList={this.props.debtList}
+          />
           <Tile 
             title="Savings Summary" 
             savingsList={this.props.savingsList}

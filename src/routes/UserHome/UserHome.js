@@ -6,6 +6,7 @@ import "./UserHome.css";
 import BudgetApiService from "../../services/budget-api-service";
 import SavingsApiService from "../../services/savings-api-service";
 import BillsApiService from "../../services/bills-api-service";
+import DebtApiService from "../../services/debt-api-service";
 import UserBar from "../../components/UserBar/UserBar"
 import currency from "currency.js";
 
@@ -18,7 +19,8 @@ class UserHome extends Component {
       budgetList: [],
       totalIncome: 0, // The users total income from all budgets (monthly pay and additional)
       savingsList: [],
-      billsList: []
+      billsList: [],
+      debtList: []
     };
 
     this.handleButtonChoice = this.handleButtonChoice.bind(this);
@@ -55,10 +57,20 @@ class UserHome extends Component {
             .then((bills)=> {
               if(bills.length !== 0){
                 this.setState(prevState => ({ billsList: [...prevState.billsList, bills] }))
-              }
-              
+              } 
             } )
         }
+
+        // Get and save all user debt from all of their budgets
+        for (let i = 0; i < budgets.length; i++){
+          DebtApiService.getAllDebt(budgets[i].budget_id)
+            .then((debt)=> {
+              if(debt.length !== 0){
+                this.setState(prevState => ({ debtList: [...prevState.debtList, debt] }))
+              } 
+            } )
+        }
+
 
       })
     .catch((error) => {
@@ -71,9 +83,10 @@ class UserHome extends Component {
     const budgetList = this.state.budgetList;
     const savingsList = this.state.savingsList;
     const billsList = this.state.billsList;
+    const debtList = this.state.debtList;
 
    // console.log("home total " + currency(this.state.totalIncome).format())
-   console.log(billsList)
+   console.log(debtList)
 
     return (
       <div className="user_home">
@@ -83,6 +96,7 @@ class UserHome extends Component {
           pageShown={this.state.pageShown}
           savingsList={this.state.savingsList}
           billsList={this.state.billsList}
+          debtList={this.state.debtList}
         />
 
       </div>

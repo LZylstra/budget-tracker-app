@@ -1,22 +1,23 @@
 .tile {
-  width: 300px;
-  /* min-height: 200px; */
+  min-width: 100px;
+  max-width: 300px;
   outline: 8px outset gray;
-  /* margin-right: 5%;
-  margin-top: 5%; */
   display: inline-flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 5px;
-    margin: 10px;
-    
-
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px;
+  margin: 10px;
+  height:fit-content;
 }
 
 .innertilesavings p{
   text-align: right;
+}
+
+.innertiledebt p, .innertilebills p{
+  text-align: left;
 }
 
 .innertiledebt, .innertilesavings, .innertilebills, .innertileexpenses{
@@ -27,4 +28,17 @@
 .innertiledebt p, .innertilesavings p, .innertilebills p, .innertileexpenses p{
   padding-bottom: 5px;
   margin: 0;
+}
+
+@media screen and (min-width: 660px) {
+  .tile {
+    height:90%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1620px) {
+  .tile {
+    margin-right: 20px;
+  }
 }
