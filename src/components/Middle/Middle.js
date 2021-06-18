@@ -22,9 +22,11 @@ class Middle extends Component {
 
       <div className="middlesection">
           {page==='expenses'? <ExpensesPage/> : 
-            page === 'savings' ? <SavingsPage/> :
+            page === 'savings' ? <SavingsPage savingsList={this.props.savingsList}/> :
               page=== 'debt' ? <DebtPage/> : 
-                page === 'bills' ? <BillPage/> : <Home/>}
+                page === 'bills' ? <BillPage/> : 
+                <Home savingsList={this.props.savingsList}/>
+          }
 
       </div>
 

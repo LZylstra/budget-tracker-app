@@ -1,7 +1,7 @@
 .tile {
-  width: 200px;
-  height: 200px;
-  background-color: gray;
+  width: 300px;
+ 
+  outline: 8px outset gray;
   /* margin-right: 5%;
   margin-top: 5%; */
   display: inline-flex;
@@ -11,4 +11,17 @@
     align-items: center;
     padding: 5px;
     margin: 10px;
+    
+
+}
+
+.innertile p{
+  padding-bottom: 5px;
+  margin: 0;
+  text-align: right;
+}
+
+.innertile{
+  width:fit-content;
+  margin-bottom: 20px;
 }
