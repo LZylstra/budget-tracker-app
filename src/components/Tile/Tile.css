@@ -1,6 +1,6 @@
 .tile {
   width: 300px;
- 
+  /* min-height: 200px; */
   outline: 8px outset gray;
   /* margin-right: 5%;
   margin-top: 5%; */
@@ -15,13 +15,16 @@
 
 }
 
-.innertile p{
-  padding-bottom: 5px;
-  margin: 0;
+.innertilesavings p{
   text-align: right;
 }
 
-.innertile{
+.innertiledebt, .innertilesavings, .innertilebills, .innertileexpenses{
   width:fit-content;
   margin-bottom: 20px;
+}
+
+.innertiledebt p, .innertilesavings p, .innertilebills p, .innertileexpenses p{
+  padding-bottom: 5px;
+  margin: 0;
 }
