@@ -33,26 +33,18 @@ class UserHome extends Component {
 
 
   componentDidMount(){
-   // let budgetStart;
     BudgetApiService.getBudgets()
       .then((budgets) => {
         this.setState({ budgetList: budgets });
-       // console.log(budgets)
+       
         for (let i = 0; i < budgets.length; i++){
           SavingsApiService.getAllSavings(budgets[i].budget_id)
           .then((savings) => {
-           // console.log(savings)
             this.setState(prevState => ({ savingsList: [...prevState.savingsList, savings] }))
           })
           
         }
       })
-     // SavingsApiService.getAllSavings(2).then((savings)=>{console.log(savings)})
-      // .then((budgets) => {
-      //  // budgetStart=budgets;
-      //  console.log(budgets)
-
-      // })
     .catch((error) => {
       console.error({ error });
     });
