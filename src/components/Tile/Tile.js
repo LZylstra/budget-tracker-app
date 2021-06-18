@@ -5,21 +5,29 @@ import "./Tile.css";
 class Tile extends Component {
   mapSavingsList(list){
      let newlist;
-
-      console.log(list)
        newlist = list.map((allSavings, index) => (
-        //  <h3>Budget {allSavings[0].budget_id}</h3>
            allSavings.map((saving, ind)=> (
-           <p>{saving.savings_name}:  {saving.savings_amount}</p>
+           <p key={ind}>{saving.savings_name}:  {saving.savings_amount}</p>
          )) //end savingArray map
         
       ));   
     return newlist
   }
 
+  mapBillsList(list){
+    let newlist;
+      newlist = list.map((allBills, index) => (
+          allBills.map((bill, ind)=> (
+          <p key={ind}>{bill.bill_name} : {bill.current_status}</p>
+        )) //end savingArray map
+       
+     ));   
+   return newlist
+ }
+
   renderSavings(){
     return (
-      <div className="innertile">
+      <div className="innertilesavings">
         {this.mapSavingsList(this.props.savingsList)}
       </div> 
     ) 
@@ -27,7 +35,7 @@ class Tile extends Component {
 
   renderDebt(){
     return (
-      <div className="innertile">
+      <div className="innertiledebt">
         <p>Debt</p>
       </div> 
     ) 
@@ -35,7 +43,7 @@ class Tile extends Component {
 
   renderExpenses(){
     return (
-      <div className="innertile">
+      <div className="innertileexpenses">
         <p>Expenses</p>
       </div> 
     ) 
@@ -43,8 +51,8 @@ class Tile extends Component {
 
   renderBills(){
     return (
-      <div className="innertile">
-        <p>Bills</p>
+      <div className="innertilebills">
+        {this.mapBillsList(this.props.billsList)}
       </div> 
     ) 
   }

@@ -9,7 +9,11 @@ class Home extends Component {
   render() {
     return (
           <div className="middletiles">
-          <Tile title="Bills Summary" type='bills' />
+          <Tile 
+            title="Bills Summary" 
+            type='bills' 
+            billsList={this.props.billsList} 
+          />
           <Tile title="Debt Summary" type='debt'/>
           <Tile 
             title="Savings Summary" 

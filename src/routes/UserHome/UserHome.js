@@ -5,6 +5,7 @@ import Middle from "../../components/Middle/Middle"
 import "./UserHome.css";
 import BudgetApiService from "../../services/budget-api-service";
 import SavingsApiService from "../../services/savings-api-service";
+import BillsApiService from "../../services/bills-api-service";
 import UserBar from "../../components/UserBar/UserBar"
 import currency from "currency.js";
 
@@ -16,7 +17,8 @@ class UserHome extends Component {
       pageShown: 'home',
       budgetList: [],
       totalIncome: 0, // The users total income from all budgets (monthly pay and additional)
-      savingsList: []
+      savingsList: [],
+      billsList: []
     };
 
     this.handleButtonChoice = this.handleButtonChoice.bind(this);
@@ -37,13 +39,27 @@ class UserHome extends Component {
       .then((budgets) => {
         this.setState({ budgetList: budgets });
        
+        // Get and save all user savings from all of their budgets
         for (let i = 0; i < budgets.length; i++){
           SavingsApiService.getAllSavings(budgets[i].budget_id)
           .then((savings) => {
-            this.setState(prevState => ({ savingsList: [...prevState.savingsList, savings] }))
+            if(savings.length !== 0){ 
+              this.setState(prevState => ({ savingsList: [...prevState.savingsList, savings] }))
+            }
           })
-          
         }
+
+        // Get and save all user bills from all of their budgets
+        for (let i = 0; i < budgets.length; i++){
+          BillsApiService.getAllBills(budgets[i].budget_id)
+            .then((bills)=> {
+              if(bills.length !== 0){
+                this.setState(prevState => ({ billsList: [...prevState.billsList, bills] }))
+              }
+              
+            } )
+        }
+
       })
     .catch((error) => {
       console.error({ error });
@@ -54,8 +70,10 @@ class UserHome extends Component {
   render() {
     const budgetList = this.state.budgetList;
     const savingsList = this.state.savingsList;
+    const billsList = this.state.billsList;
+
    // console.log("home total " + currency(this.state.totalIncome).format())
-   console.log(savingsList)
+   console.log(billsList)
 
     return (
       <div className="user_home">
@@ -64,6 +82,7 @@ class UserHome extends Component {
         <Middle 
           pageShown={this.state.pageShown}
           savingsList={this.state.savingsList}
+          billsList={this.state.billsList}
         />
 
       </div>

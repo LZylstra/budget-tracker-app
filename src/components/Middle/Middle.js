@@ -25,7 +25,10 @@ class Middle extends Component {
             page === 'savings' ? <SavingsPage savingsList={this.props.savingsList}/> :
               page=== 'debt' ? <DebtPage/> : 
                 page === 'bills' ? <BillPage/> : 
-                <Home savingsList={this.props.savingsList}/>
+                <Home 
+                  savingsList={this.props.savingsList}
+                  billsList={this.props.billsList}
+                />
           }
 
       </div>
