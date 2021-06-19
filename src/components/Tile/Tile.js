@@ -36,6 +36,26 @@ class Tile extends Component {
  return newlist
 }
 
+
+mapExpenseList(list){
+  let newlist;
+  let currentYear = new Date().getFullYear().toString();
+  let count = 0;
+  
+  console.log(currentYear)
+    newlist = list.map((allCategories, index) => (
+      allCategories.map((category, ind)=> {
+        if (category.category_year === currentYear){
+          return <p key={ind}>{category.category_name} </p>
+        }
+        console.log(category.category_year === currentYear)
+        //<p key={ind}>{category.category_name} </p>
+      }) //end savingArray map
+     
+   ));   
+ return newlist
+}
+
   renderSavings(){
     return (
       <div className="innertilesavings">
@@ -55,7 +75,7 @@ class Tile extends Component {
   renderExpenses(){
     return (
       <div className="innertileexpenses">
-        <p>Expenses</p>
+        {this.mapExpenseList(this.props.categoryList)}
       </div> 
     ) 
   }

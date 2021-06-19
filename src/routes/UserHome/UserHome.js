@@ -120,6 +120,7 @@ class UserHome extends Component {
           savingsList={this.state.savingsList}
           billsList={this.state.billsList}
           debtList={this.state.debtList}
+          categoryList={this.state.categoryList}
         />
 
       </div>
