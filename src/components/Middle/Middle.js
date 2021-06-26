@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import Tile from "../../components/Tile/Tile";
 import ExpensesPage from "../../routes/ExpensesPage/ExpensesPage"
 import BillPage from "../../routes/BillPage/BillPage"
 import SavingsPage from "../../routes/SavingsPage/SavingsPage"
@@ -15,8 +14,6 @@ class Middle extends Component {
 
   render() {
     let page = this.props.pageShown;
-   // console.log(page)
-    //   {page === 'home' ? this.renderHome() : <ExpensesPage/>}
 
     return (
 
@@ -30,6 +27,7 @@ class Middle extends Component {
                   billsList={this.props.billsList}
                   debtList={this.props.debtList}
                   categoryList={this.props.categoryList}
+                  expenseList={this.props.expenseList}
                 />
           }
 
