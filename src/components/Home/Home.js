@@ -24,7 +24,12 @@ class Home extends Component {
             savingsList={this.props.savingsList}
             type='savings'
           />
-          <Tile title="Expenses Summary" type='expenses' />
+          <Tile 
+            title="Expenses Summary" 
+            type='expenses' 
+            categoryList={this.props.categoryList}
+            expenseList={this.props.expenseList}
+          />
           </div>
       );
   }
