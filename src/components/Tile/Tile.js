@@ -1,7 +1,6 @@
 import currency from "currency.js";
 import React from "react";
 import { Component } from "react";
-import Loader from "../Loader/Loader"
 import "./Tile.css";
 
 class Tile extends Component {

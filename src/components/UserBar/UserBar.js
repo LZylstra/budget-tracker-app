@@ -47,22 +47,18 @@ class UserBar extends Component {
 
     getTotalIncome(inc, add){
        let total = currency(inc).add(currency(add))
-        //console.log(currency(total).format())
         return total;
     }
 
     componentDidUpdate(){
         let total = this.getTotalIncome(this.calculateTotalPay(), this.calculateTotalAdditional())
-      //  console.log("total " + currency(total).format())
-        let update, previous = currency(this.state.totalIncome).format();
+        //let update, 
+        let previous = currency(this.state.totalIncome).format();
         let trimPrev = previous.trim()
         let trimTotal = currency(total).format().trim()
-       // console.log("trimPrev " + trimPrev)
-       // console.log("trimTotal " + trimTotal)
         
-        if (trimPrev != trimTotal){
-            //console.log("they don't match")
-            update = currency(total).format()
+        if (trimPrev !== trimTotal){
+            //update = currency(total).format()
             this.updateTotalIncome(total)
             this.props.updateIncome(total)
         }
