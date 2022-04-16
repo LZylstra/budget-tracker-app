@@ -4,7 +4,7 @@ import "./Sidebar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { Component } from "react";
-import { render } from "@testing-library/react";
+
 
 class Sidebar extends Component {
   onClickHome=(e)=>{

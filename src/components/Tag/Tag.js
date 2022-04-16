@@ -6,7 +6,7 @@ class Tag extends Component {
 
  onClickTag=(e)=>{
   // e.preventDefault();
-    console.log(this.props.value);
+   // console.log(this.props.value);
     this.props.handleButtonChoice(this.props.value)
   }
   render(){

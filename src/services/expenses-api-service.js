@@ -1,9 +1,9 @@
 import TokenService from "../services/token-service";
 import config from "../config";
 
-const CategoryApiService = {
-  getAllCategories(budgetId) {
-    return fetch(`${config.API_ENDPOINT}/category/budget/${budgetId}`, {
+const ExpenseApiService = {
+  getAllExpenses(categoryId) {
+    return fetch(`${config.API_ENDPOINT}/expense/category/${categoryId}`, {
       headers: {
         authorization: `bearer ${TokenService.getAuthToken()}`,
       },
@@ -15,8 +15,8 @@ const CategoryApiService = {
       return res.json();
     });
   },
-  getCategory(id) {
-    return fetch(`${config.API_ENDPOINT}/category/${id}`, {
+  getExpense(id) {
+    return fetch(`${config.API_ENDPOINT}/expense/${id}`, {
       headers: { authorization: `bearer ${TokenService.getAuthToken()}` },
     }).then((res) => {
       if (!res.ok) {
@@ -25,23 +25,27 @@ const CategoryApiService = {
       return res.json();
     });
   },
-  postCategory(newCategory, budgetId) {
+  postExpense(newExpense, categoryId) {
    // let user_id = TokenService.getUser();
     const {
-        category_name,
-        category_year,
-        monthly_max,
-    } = newCategory;
-    return fetch(`${config.API_ENDPOINT}/category/budget/${budgetId}`, {
+        expense_amount,
+        expense_date,
+        expense_desc,
+        expense_type,
+        category_id 
+    } = newExpense;
+    return fetch(`${config.API_ENDPOINT}/expense/category/${categoryId}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
         authorization: `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
-        category_name:category_name,
-        category_year:category_year,
-        monthly_max:monthly_max,
+        expense_amount:expense_amount,
+        expense_date:expense_date,
+        expense_desc:expense_desc,
+        expense_type:expense_type,
+        category_id:category_id
       }),
     }).then((res) => {
       if (!res.ok) {
@@ -51,23 +55,27 @@ const CategoryApiService = {
       return res.json();
     });
   },
-  patchCategory(updatedCategory, categoryId) {
+  patchExpense(updatedExpense, expenseId) {
     const {
-        category_name,
-        category_year,
-        monthly_max,
-    } = updatedCategory;
+        expense_amount,
+        expense_date,
+        expense_desc,
+        expense_type,
+        category_id
+    } = updatedExpense;
 
-    return fetch(`${config.API_ENDPOINT}/category/${categoryId}`, {
+    return fetch(`${config.API_ENDPOINT}/expense/${expenseId}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
         authorization: `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
-        category_name:category_name,
-        category_year:category_year,
-        monthly_max:monthly_max,
+        expense_amount:expense_amount,
+        expense_date:expense_date,
+        expense_desc:expense_desc,
+        expense_type:expense_type,
+        category_id:category_id
       }),
     }).then((res) => {
       if (!res.ok) {
@@ -77,8 +85,8 @@ const CategoryApiService = {
       //return res.json();
     });
   },
-  deleteCategory(categoryId) {
-    return fetch(`${config.API_ENDPOINT}/category/${categoryId}`, {
+  deleteExpense(expenseId) {
+    return fetch(`${config.API_ENDPOINT}/expense/${expenseId}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
@@ -96,4 +104,4 @@ const CategoryApiService = {
   },
 };
 
-export default CategoryApiService;
+export default ExpenseApiService;
