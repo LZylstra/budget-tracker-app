@@ -42,7 +42,7 @@ class Tile extends Component {
     let newlist;
     let currentYear = new Date().getFullYear().toString();
     let count = 0;
-    console.log(currentYear);
+    
     newlist = list.map((allCategories, index) => {
       allCategories.map((category, ind) => {
         if (category.category_year === currentYear) {

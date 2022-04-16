@@ -41,9 +41,16 @@
     padding-left: 10px;
 }
 .magnifying_money{
-    width:20px;
     position: relative;
     float: right;
+    padding-left: 10px;
+}
+.transfer_money{
+    position: relative;
+    float: right;
+}
+.savings_icon{
+    width:20px;
 }
 
 .hidden_savings_info{
@@ -57,10 +64,12 @@
     float:left;
     padding-left: 10px;
     margin:0;
+    font-weight: bold;
 }
-.savings_remaining{
+.savings_remaining, .new_rate{
     color: var(--color-lighter-blue);
     padding-left: 10px;
+    font-weight: bold;
 }
 
 /* .Form__savings{
