@@ -48,9 +48,22 @@
 .transfer_money{
     position: relative;
     float: right;
+    padding: 0px 5px 0 5px;
+    margin-top: 15px;
+    margin-left: 25px;
+    border-radius: 20px;
+    background-color: white;
+   
+    box-shadow: 1px 1px 1px 1px #0a0a0a;
+}
+.transfer_money:hover{
+    background-color: var(--color-background2);
 }
 .account_icon{
     width:20px;
+    height:30px;
+
+
 }
 
 .hidden_account_info{

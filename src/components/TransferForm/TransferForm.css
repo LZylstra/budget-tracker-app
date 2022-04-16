@@ -6,7 +6,7 @@
     position: absolute;
     top: 50%;
     left: 40%;
-
+    z-index:1;
     border-radius: 30px;
     box-shadow: 8px 11px 25px 9px rgba(0,0,0,0.68);
 

@@ -63,6 +63,14 @@ class AccountRow extends Component {
     return <TransferForm />
   }
 
+  renderSavings(){
+
+  }
+
+  renderChecking(){
+
+  }
+
   render(){
     let remaining = currency(this.props.goal).subtract(currency(this.props.amount))
     let showForm = this.state.transferForm;
@@ -74,12 +82,12 @@ class AccountRow extends Component {
           <div className="account_box">
               <h4 className="account_name">{this.props.name}</h4>
               <p className="account_amount">{this.props.amount}</p>
-
+              
+            <img src={transferMoney} className="transfer_money account_icon" onClick={this.handleClickTransfer} />
           </div> 
           <div className="goal_box">
             <h4 className="goal_title">Goal</h4>
-            <img src={moneyZoom} className="magnifying_money account_icon" onClick={this.updateExtraHidden} />
-            <img src={transferMoney} className="transfer_money account_icon" onClick={this.handleClickTransfer} />
+              <img src={moneyZoom} className="magnifying_money account_icon" onClick={this.updateExtraHidden} />
               <p className={this.state.extraHidden ? "current_amount hidden_account_info" : "current_amount"}>{this.props.amount} /&nbsp; </p>
               <p className="account_goal">{this.props.goal}</p>
 

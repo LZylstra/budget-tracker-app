@@ -18,6 +18,7 @@ class AccountsPage extends Component {
           goal_date={accountitem.goal_date}
           goal={accountitem.goal_amount}
           monthly_auto={accountitem.monthly_auto}
+          type={accountitem.account_type}
           key={index}
         />
        ))
@@ -31,7 +32,7 @@ class AccountsPage extends Component {
     let list = this.props.accountsList;
     return (
       <div className="accounts_page">
-        <h2 className="page_title">Account Page</h2>
+        <h2 className="page_title">Accounts Page</h2>
         <div className="inner_accounts_page">
         {this.renderAccountsList(list)}
         </div>
