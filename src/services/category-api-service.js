@@ -40,8 +40,8 @@ const CategoryApiService = {
       },
       body: JSON.stringify({
         category_name:category_name,
-        category_year:category_name,
-        monthly_max:category_name,
+        category_year:category_year,
+        monthly_max:monthly_max,
       }),
     }).then((res) => {
       if (!res.ok) {
@@ -66,8 +66,8 @@ const CategoryApiService = {
       },
       body: JSON.stringify({
         category_name:category_name,
-        category_year:category_name,
-        monthly_max:category_name,
+        category_year:category_year,
+        monthly_max:monthly_max,
       }),
     }).then((res) => {
       if (!res.ok) {

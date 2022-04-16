@@ -1,0 +1,19 @@
+.savings_box{
+    display:flex;
+    border-radius: 40px;
+    padding: 15px;
+    width: fit-content;
+    box-shadow: 2px 4px 6px 2px #888888;
+    background-color: #3B3B3B;
+    margin:20px;
+}
+
+.savings_name{
+    padding-right: 15px;
+    color:white;
+
+}
+.savings_amount{
+    padding-top: 5px;
+    color: var(--color-background2);;
+}

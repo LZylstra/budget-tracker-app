@@ -9,7 +9,7 @@ import BillsApiService from "../../services/bills-api-service";
 import DebtApiService from "../../services/debt-api-service";
 import CategoryApiService from "../../services/category-api-service";
 import UserBar from "../../components/UserBar/UserBar"
-import currency from "currency.js";
+import Loader from "../../components/Loader/Loader"
 import ExpenseApiService from "../../services/expenses-api-service";
 
 class UserHome extends Component {
@@ -18,13 +18,14 @@ class UserHome extends Component {
 
     this.state = {
       pageShown: 'home',
+      loading: true,
       budgetList: [],
       totalIncome: 0, // The users total income from all budgets (monthly pay and additional)
       savingsList: [],
       billsList: [],
       debtList: [],
       categoryList:[],
-      expensesList:[]
+      expenseList:[],
     };
 
     this.handleButtonChoice = this.handleButtonChoice.bind(this);
@@ -50,7 +51,10 @@ class UserHome extends Component {
           SavingsApiService.getAllSavings(budgets[i].budget_id)
           .then((savings) => {
             if(savings.length !== 0){ 
-              this.setState(prevState => ({ savingsList: [...prevState.savingsList, savings] }))
+              this.setState(prevState => ({ 
+                savingsList: [...prevState.savingsList, savings]
+
+              }))
             }
           })
         }
@@ -60,7 +64,10 @@ class UserHome extends Component {
           BillsApiService.getAllBills(budgets[i].budget_id)
             .then((bills)=> {
               if(bills.length !== 0){
-                this.setState(prevState => ({ billsList: [...prevState.billsList, bills] }))
+                this.setState(prevState => ({ 
+                  billsList: [...prevState.billsList, bills] 
+
+                }))
               } 
             } )
         }
@@ -70,7 +77,10 @@ class UserHome extends Component {
           DebtApiService.getAllDebt(budgets[i].budget_id)
             .then((debt)=> {
               if(debt.length !== 0){
-                this.setState(prevState => ({ debtList: [...prevState.debtList, debt] }))
+                this.setState(prevState => ({ 
+                  debtList: [...prevState.debtList, debt] 
+
+                }))
               } 
             } )
         }
@@ -81,50 +91,74 @@ class UserHome extends Component {
             .then((category)=> {
               if(category.length !== 0){
                // console.log(category)
-                this.setState(prevState => ({ categoryList: [...prevState.categoryList, category] }))
-                
+                               
                 for(let c = 0; c < category.length; c++){
                   ExpenseApiService.getAllExpenses(category[c].category_id)
                     .then((expenses)=> {
-                      category[c].expenseList = expenses
+                      //category[c].expenseList = expenses
+                      if (expenses.length !== 0){
+                        this.setState(prevState => ({ expenseList: [...prevState.expenseList, expenses]}))
+                      }
+                     
                     }) //end api
                   } //end for c
                   
+                  this.setState(prevState => ({ categoryList: [...prevState.categoryList, category]}))
                 } //end if
               }) // end then
         }//end for
-            
+          
       })
+       .then(this.setState({ loading: false }))
     .catch((error) => {
       console.error({ error });
+      this.wait();
     });
 
   }
+  sleep = (milliseconds) => {
+    return new Promise((resolve) => setTimeout(resolve, milliseconds));
+  };
+
+  wait = async (milliseconds = 200) => {
+    await this.sleep(milliseconds);
+    this.setState({
+     pageShown: 'home',
+     loading: false,
+     loadingCat: false,
+     budgetList: [],
+     totalIncome: 0, 
+     savingsList: [],
+     billsList: [],
+     debtList: [],
+     categoryList:[]
+
+    })
+  }
 
   render() {
-    const budgetList = this.state.budgetList;
-    const savingsList = this.state.savingsList;
-    const billsList = this.state.billsList;
-    const debtList = this.state.debtList;
-    const categoryList = this.state.categoryList;
+    const { budgetList, savingsList, billsList, debtList, categoryList, pageShown, expenseList }= this.state;
 
-   // console.log("home total " + currency(this.state.totalIncome).format())
-   console.log(categoryList) 
-
+   if (this.state.loading){
+     return <Loader/>
+   }
+   else{
     return (
       <div className="user_home">
         <Sidebar handleButtonChoice={this.handleButtonChoice}/>
         <UserBar budgetList={budgetList} updateIncome={this.updateIncome}/>
-        <Middle 
-          pageShown={this.state.pageShown}
-          savingsList={this.state.savingsList}
-          billsList={this.state.billsList}
-          debtList={this.state.debtList}
-          categoryList={this.state.categoryList}
-        />
-
+        
+         <Middle 
+            pageShown={pageShown}
+            savingsList={savingsList}
+            billsList={billsList}
+            debtList={debtList}
+            categoryList={categoryList}
+            expenseList={expenseList}
+          />
       </div>
     );
+      }
   }
 }
 

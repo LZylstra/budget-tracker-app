@@ -28,6 +28,7 @@ class Home extends Component {
             title="Expenses Summary" 
             type='expenses' 
             categoryList={this.props.categoryList}
+            expenseList={this.props.expenseList}
           />
           </div>
       );
