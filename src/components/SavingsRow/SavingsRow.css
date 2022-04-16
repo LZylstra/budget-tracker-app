@@ -20,6 +20,7 @@
     color: var(--color-background2);
 }
 
+
 .goal_title{
     text-align: center;
     background-color: var(--color-background3);
@@ -39,8 +40,30 @@
 .savings_goal, .savings_date, .monthly_auto_savings{
     padding-left: 10px;
 }
+.magnifying_money{
+    width:20px;
+    position: relative;
+    float: right;
+}
 
-.Form__savings{
+.hidden_savings_info{
+    display:none;
+}
+
+.current_amount{
+    color: var(--color-dark-green);
+    position:relative;
+    width:fit-content;
+    float:left;
+    padding-left: 10px;
+    margin:0;
+}
+.savings_remaining{
+    color: var(--color-lighter-blue);
+    padding-left: 10px;
+}
+
+/* .Form__savings{
     width:100px;
 }
 .extra_amount_box{
@@ -51,4 +74,4 @@
     padding-right: 10px;
     padding-left: 10px;
     
-}
+} */
