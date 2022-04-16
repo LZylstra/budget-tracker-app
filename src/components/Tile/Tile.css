@@ -12,6 +12,10 @@
   height:fit-content;
 }
 
+.tile:active{
+  background-color: green;
+}
+
 .innertilesavings p{
   text-align: right;
 }
