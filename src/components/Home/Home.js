@@ -12,9 +12,9 @@ class Home extends Component {
       <UserBar budgetList={this.props.budgetList} updateIncome={this.props.updateIncome}/>
           <div className="middletiles">
           <Tile 
-            title="Savings Summary" 
-            savingsList={this.props.savingsList}
-            type='savings'
+            title="Accounts Summary" 
+            accountsList={this.props.accountsList}
+            type='accounts'
           />
           <Tile 
             title="Bills Summary" 

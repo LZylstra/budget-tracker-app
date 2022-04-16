@@ -5,11 +5,11 @@ import "./Tile.css";
 
 class Tile extends Component {
 
-  mapSavingsList(list){
+  mapAccountsList(list){
      let newlist;
-       newlist = list.map((allSavings, index) => (
-           allSavings.map((saving, ind)=> (
-           <p key={ind}>{saving.savings_name}:  {saving.savings_amount}</p>
+       newlist = list.map((allAccounts, index) => (
+           allAccounts.map((account, ind)=> (
+           <p key={ind}>{account.account_name}:  {account.account_amount}</p>
          )) 
         
       ));   
@@ -46,20 +46,20 @@ class Tile extends Component {
     newlist = list.map((allCategories, index) => {
       allCategories.map((category, ind) => {
         if (category.category_year === currentYear) {
-          console.log("if");
+         // console.log("if");
         }
-        console.log(category.category_year === currentYear);
+      //  console.log(category.category_year === currentYear);
         <p key={ind}>{category.category_name} </p>;
-      }); //end savingArray map
+      }); //end accountArray map
     });
     return newlist;
   }
 
 
-  renderSavings() {
+  renderAccounts() {
     return (
-      <div className="innertilesavings">
-        {this.mapSavingsList(this.props.savingsList)}
+      <div className="innertileaccounts">
+        {this.mapAccountsList(this.props.accountsList)}
       </div>
     );
   }
@@ -94,8 +94,8 @@ class Tile extends Component {
     return (
       <div className="tile">
         <h2>{this.props.title}</h2>
-        {this.props.type === "savings"
-          ? this.renderSavings()
+        {this.props.type === "accounts"
+          ? this.renderAccounts()
           : this.props.type === "debt"
           ? this.renderDebt()
           : this.props.type === "bills"

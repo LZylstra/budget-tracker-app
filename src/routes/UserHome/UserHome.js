@@ -4,11 +4,11 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import Middle from "../../components/Middle/Middle"
 import "./UserHome.css";
 import BudgetApiService from "../../services/budget-api-service";
-import SavingsApiService from "../../services/savings-api-service";
+import AccountsApiService from "../../services/accounts-api-service";
 import BillsApiService from "../../services/bills-api-service";
 import DebtApiService from "../../services/debt-api-service";
 import CategoryApiService from "../../services/category-api-service";
-import UserBar from "../../components/UserBar/UserBar"
+//import UserBar from "../../components/UserBar/UserBar"
 import Loader from "../../components/Loader/Loader"
 import ExpenseApiService from "../../services/expenses-api-service";
 
@@ -21,7 +21,7 @@ class UserHome extends Component {
       loading: true,
       budgetList: [],
       totalIncome: 0, // The users total income from all budgets (monthly pay and additional)
-      savingsList: [],
+      accountsList: [],
       billsList: [],
       debtList: [],
       categoryList:[],
@@ -46,13 +46,13 @@ class UserHome extends Component {
       .then((budgets) => {
         this.setState({ budgetList: budgets });
        
-        // Get and save all user savings from all of their budgets
+        // Get and save all user accounts from all of their budgets
         for (let i = 0; i < budgets.length; i++){
-          SavingsApiService.getAllSavings(budgets[i].budget_id)
-          .then((savings) => {
-            if(savings.length !== 0){ 
+          AccountsApiService.getAllAccounts(budgets[i].budget_id)
+          .then((accounts) => {
+            if(accounts.length !== 0){ 
               this.setState(prevState => ({ 
-                savingsList: [...prevState.savingsList, savings]
+                accountsList: [...prevState.accountsList, accounts]
 
               }))
             }
@@ -128,7 +128,7 @@ class UserHome extends Component {
      loadingCat: false,
      budgetList: [],
      totalIncome: 0, 
-     savingsList: [],
+     accountsList: [],
      billsList: [],
      debtList: [],
      categoryList:[]
@@ -137,7 +137,7 @@ class UserHome extends Component {
   }
 
   render() {
-    const { budgetList, savingsList, billsList, debtList, categoryList, pageShown, expenseList }= this.state;
+    const { budgetList, accountsList, billsList, debtList, categoryList, pageShown, expenseList }= this.state;
 
    if (this.state.loading){
      return <Loader/>
@@ -150,7 +150,7 @@ class UserHome extends Component {
         
          <Middle 
             pageShown={pageShown}
-            savingsList={savingsList}
+            accountsList={accountsList}
             billsList={billsList}
             debtList={debtList}
             categoryList={categoryList}

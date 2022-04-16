@@ -1,4 +1,4 @@
-.savings_box{
+.account_box{
     display:flex;
     border-radius: 40px;
     padding: 15px;
@@ -9,13 +9,13 @@
     margin:20px 20px 0px 20px;
 }
 
-.savings_name{
+.account_name{
     padding-right: 25px;
     padding-left: 25px;
     color:white;
 
 }
-.savings_amount{
+.account_amount{
     padding-top: 5px;
     color: var(--color-background2);
 }
@@ -37,7 +37,7 @@
     padding: 5px 10px 40px 10px;
     margin-top:0px;
 }
-.savings_goal, .savings_date, .monthly_auto_savings{
+.account_goal, .account_date, .monthly_auto_account{
     padding-left: 10px;
 }
 .magnifying_money{
@@ -49,11 +49,11 @@
     position: relative;
     float: right;
 }
-.savings_icon{
+.account_icon{
     width:20px;
 }
 
-.hidden_savings_info{
+.hidden_account_info{
     display:none;
 }
 
@@ -66,13 +66,13 @@
     margin:0;
     font-weight: bold;
 }
-.savings_remaining, .new_rate{
+.account_remaining, .new_rate{
     color: var(--color-lighter-blue);
     padding-left: 10px;
     font-weight: bold;
 }
 
-/* .Form__savings{
+/* .Form__account{
     width:100px;
 }
 .extra_amount_box{

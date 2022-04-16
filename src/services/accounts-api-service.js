@@ -1,9 +1,9 @@
 import TokenService from "../services/token-service";
 import config from "../config";
 
-const SavingsApiService = {
-  getAllSavings(budgetId) {
-    return fetch(`${config.API_ENDPOINT}/savings/budget/${budgetId}`, {
+const AccountsApiService = {
+  getAllAccounts(budgetId) {
+    return fetch(`${config.API_ENDPOINT}/accounts/budget/${budgetId}`, {
       headers: {
         authorization: `bearer ${TokenService.getAuthToken()}`,
       },
@@ -15,8 +15,8 @@ const SavingsApiService = {
       return res.json();
     });
   },
-  getSavings(id) {
-    return fetch(`${config.API_ENDPOINT}/savings/${id}`, {
+  getAccount(id) {
+    return fetch(`${config.API_ENDPOINT}/accounts/${id}`, {
       headers: { authorization: `bearer ${TokenService.getAuthToken()}` },
     }).then((res) => {
       if (!res.ok) {
@@ -25,24 +25,24 @@ const SavingsApiService = {
       return res.json();
     });
   },
-  postSavings(newSavings, budgetId) {
+  postAccount(newAccount, budgetId) {
    // let user_id = TokenService.getUser();
     const {
-        savings_name,
-        savings_amount,
+        accounts_name,
+        accounts_amount,
         goal_date,
         goal_amount,
         monthly_auto
-    } = newSavings;
-    return fetch(`${config.API_ENDPOINT}/savings/budget/${budgetId}`, {
+    } = newAccount;
+    return fetch(`${config.API_ENDPOINT}/accounts/budget/${budgetId}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
         authorization: `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
-        savings_name: savings_name,
-        savings_amount: savings_amount,
+        accounts_name: accounts_name,
+        accounts_amount: accounts_amount,
         goal_date: goal_date,
         goal_amount: goal_amount,
         monthly_auto: monthly_auto
@@ -55,25 +55,25 @@ const SavingsApiService = {
       return res.json();
     });
   },
-  patchSavings(updatedSavings, savingsId) {
+  patchAccount(updatedAccount, accountsId) {
     // let user = TokenService.getUser();
     const {
-        savings_name,
-        savings_amount,
+        accounts_name,
+        accounts_amount,
         goal_date,
         goal_amount,
         monthly_auto
-    } = updatedSavings;
+    } = updatedAccount;
 
-    return fetch(`${config.API_ENDPOINT}/savings/${savingsId}`, {
+    return fetch(`${config.API_ENDPOINT}/accounts/${accountsId}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
         authorization: `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
-        savings_name: savings_name,
-        savings_amount: savings_amount,
+        accounts_name: accounts_name,
+        accounts_amount: accounts_amount,
         goal_date: goal_date,
         goal_amount: goal_amount,
         monthly_auto: monthly_auto
@@ -86,8 +86,8 @@ const SavingsApiService = {
       //return res.json();
     });
   },
-  deleteSavings(savingsId) {
-    return fetch(`${config.API_ENDPOINT}/savings/${savingsId}`, {
+  deleteAccount(accountsId) {
+    return fetch(`${config.API_ENDPOINT}/accounts/${accountsId}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
@@ -105,4 +105,4 @@ const SavingsApiService = {
   },
 };
 
-export default SavingsApiService;
+export default AccountsApiService;

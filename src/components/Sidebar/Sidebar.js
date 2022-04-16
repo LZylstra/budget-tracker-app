@@ -13,7 +13,7 @@ class Sidebar extends Component {
   render(){
     return (
       <div className="sidebar">
-        <Tag title="Savings" value="savings" handleButtonChoice={this.props.handleButtonChoice} />
+        <Tag title="Accounts" value="accounts" handleButtonChoice={this.props.handleButtonChoice} />
         <Tag title="Bills" value="bills" handleButtonChoice={this.props.handleButtonChoice} />
         <Tag title="Debt" value="debt" handleButtonChoice={this.props.handleButtonChoice}/>
         <Tag title="Expenses" value="expenses" handleButtonChoice={this.props.handleButtonChoice}/>
