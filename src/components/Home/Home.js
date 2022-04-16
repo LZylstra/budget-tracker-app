@@ -10,6 +10,11 @@ class Home extends Component {
     return (
           <div className="middletiles">
           <Tile 
+            title="Savings Summary" 
+            savingsList={this.props.savingsList}
+            type='savings'
+          />
+          <Tile 
             title="Bills Summary" 
             type='bills' 
             billsList={this.props.billsList} 
@@ -19,11 +24,7 @@ class Home extends Component {
             type='debt'
             debtList={this.props.debtList}
           />
-          <Tile 
-            title="Savings Summary" 
-            savingsList={this.props.savingsList}
-            type='savings'
-          />
+
           <Tile 
             title="Expenses Summary" 
             type='expenses' 
