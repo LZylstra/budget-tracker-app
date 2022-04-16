@@ -1,0 +1,86 @@
+.savings_box{
+    display:flex;
+    border-radius: 40px;
+    padding: 15px;
+    min-width:350px;
+    width: fit-content;
+    box-shadow: 2px 4px 6px 2px #888888;
+    background-color: #3B3B3B;
+    margin:20px 20px 0px 20px;
+}
+
+.savings_name{
+    padding-right: 25px;
+    padding-left: 25px;
+    color:white;
+
+}
+.savings_amount{
+    padding-top: 5px;
+    color: var(--color-background2);
+}
+
+
+.goal_title{
+    text-align: center;
+    background-color: var(--color-background3);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 50px;
+    margin-top:10px;
+}
+
+.goal_box{
+    width: 250px;
+    margin-left: 60px;
+    box-shadow: 2px 4px 6px 2px #888888;
+    padding: 5px 10px 40px 10px;
+    margin-top:0px;
+}
+.savings_goal, .savings_date, .monthly_auto_savings{
+    padding-left: 10px;
+}
+.magnifying_money{
+    position: relative;
+    float: right;
+    padding-left: 10px;
+}
+.transfer_money{
+    position: relative;
+    float: right;
+}
+.savings_icon{
+    width:20px;
+}
+
+.hidden_savings_info{
+    display:none;
+}
+
+.current_amount{
+    color: var(--color-dark-green);
+    position:relative;
+    width:fit-content;
+    float:left;
+    padding-left: 10px;
+    margin:0;
+    font-weight: bold;
+}
+.savings_remaining, .new_rate{
+    color: var(--color-lighter-blue);
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+/* .Form__savings{
+    width:100px;
+}
+.extra_amount_box{
+    display:flex;
+}
+.extra_amount_box label{
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    
+} */

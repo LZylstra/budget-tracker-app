@@ -1,0 +1,10 @@
+.page_title{
+    text-align: center;
+}
+
+.inner_savings_page{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
