@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import UserBar from "../../components/UserBar/UserBar";
 import Tile from "../../components/Tile/Tile";
 
 import "./Home.css";
@@ -8,6 +8,8 @@ class Home extends Component {
 
   render() {
     return (
+      <>
+      <UserBar budgetList={this.props.budgetList} updateIncome={this.props.updateIncome}/>
           <div className="middletiles">
           <Tile 
             title="Savings Summary" 
@@ -32,6 +34,7 @@ class Home extends Component {
             expenseList={this.props.expenseList}
           />
           </div>
+          </>
       );
   }
 }

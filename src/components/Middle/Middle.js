@@ -28,6 +28,8 @@ render() {
                   debtList={this.props.debtList}
                   categoryList={this.props.categoryList}
                   expenseList={this.props.expenseList}
+                  budgetList={this.props.budgetList}
+                  updateIncome={this.props.updateIncome}
                 />
           }
 
