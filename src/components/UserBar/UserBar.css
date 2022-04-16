@@ -1,18 +1,21 @@
 .budget_summary_details{
     width:fit-content;
     margin:auto;
-
+    height: 80px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 .budget_summary_details h3, .budget_summary_details p{
     margin:0;
+
 }
 .user_bar{
     position:relative;
     text-align: center;
     background-color: cadetblue;
+    height: 80px;
+    margin-bottom: 0;
 }
 
 @media screen and (min-width: 680px) {

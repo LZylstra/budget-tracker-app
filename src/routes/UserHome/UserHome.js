@@ -146,7 +146,7 @@ class UserHome extends Component {
     return (
       <div className="user_home">
         <Sidebar handleButtonChoice={this.handleButtonChoice}/>
-        <UserBar budgetList={budgetList} updateIncome={this.updateIncome}/>
+        {/* <UserBar budgetList={budgetList} updateIncome={this.updateIncome}/> */}
         
          <Middle 
             pageShown={pageShown}
@@ -155,6 +155,8 @@ class UserHome extends Component {
             debtList={debtList}
             categoryList={categoryList}
             expenseList={expenseList}
+            budgetList={budgetList}
+            updateIncome={this.updateIncome}
           />
       </div>
     );
