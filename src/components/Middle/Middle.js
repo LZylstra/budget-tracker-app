@@ -9,19 +9,19 @@ import "./Middle.css";
 
 
 class Middle extends Component {
-
-
-
-  render() {
+render() {
     let page = this.props.pageShown;
 
     return (
 
       <div className="middlesection">
-          {page==='expenses'? <ExpensesPage/> : 
+          {page==='expenses'? <ExpensesPage 
+                                  expenseList={this.props.expenseList}
+                                  categoryList={this.props.categoryList}
+                              /> : 
             page === 'savings' ? <SavingsPage savingsList={this.props.savingsList}/> :
-              page=== 'debt' ? <DebtPage/> : 
-                page === 'bills' ? <BillPage/> : 
+              page=== 'debt' ? <DebtPage debtList={this.props.debtList}/> : 
+                page === 'bills' ? <BillPage billsList={this.props.billsList}/> : 
                 <Home 
                   savingsList={this.props.savingsList}
                   billsList={this.props.billsList}

@@ -1,0 +1,44 @@
+.exp_header{
+    margin: auto;
+    margin-top: 0;
+    width:fit-content;
+}
+
+.expense_list{
+    list-style: none;
+    border: 3px solid black;
+    padding: 20px;
+}
+
+.catButton{
+    padding: 20px;
+    background-color: var(--color-lighter-blue);
+    width: 200px;
+    text-align: center;
+    box-shadow: 6px 4px 19px -2px rgba(0,0,0,0.33);
+    font-size: 20px;
+    border-radius: 25px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    margin-right: 0px;
+}
+
+.catButton:hover {
+    background-color: rgba(179,189,230,0.5);
+  }
+
+  .catForm{
+      background-color: var(--color-pink-accent);
+      width: fit-content;
+      padding: 50px;
+      padding-right: 60px;
+      margin: 20px;
+  
+  }
+
+  .categoryDetails{
+      width:fit-content;
+      border: 1px solid black;
+      padding: 50px;
+    
+  }
