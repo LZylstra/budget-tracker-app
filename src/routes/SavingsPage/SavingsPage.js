@@ -32,9 +32,9 @@ class SavingsPage extends Component {
     return (
       <div className="savings_page">
         <h2 className="page_title">Savings page</h2>
-
+        <div className="inner_savings_page">
         {this.renderSavingsList(list)}
-      
+        </div>
         
 
       </div>
