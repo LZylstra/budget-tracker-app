@@ -1,10 +1,9 @@
 .app_description{
     text-align: center;
     color: #351f39;
-    font-size: 35px;
     margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #landing-img {
@@ -25,3 +24,12 @@
       position: absolute;
       background-color: var(--color-background1);
   }
+
+@media screen and (min-width: 680px) {
+    .app_description{
+        font-size: 35px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+}
