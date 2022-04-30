@@ -23,8 +23,6 @@ class AccountsPage extends Component {
         />
        ))
       )); 
-     
-// return test;
   }
   
   render() {

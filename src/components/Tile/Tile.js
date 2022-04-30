@@ -1,6 +1,13 @@
 import currency from "currency.js";
 import React from "react";
 import { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPiggyBank,
+  faMoneyBillWave,
+  faCreditCardFront,
+  faMoneyCheckAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import "./Tile.css";
 
 class Tile extends Component {
@@ -9,7 +16,10 @@ class Tile extends Component {
      let newlist;
        newlist = list.map((allAccounts, index) => (
            allAccounts.map((account, ind)=> (
+            <>
+            {/* <FontAwesomeIcon className="home_icon fa-lg" icon={faMoneyCheckAlt} /> */}
            <p key={ind}>{account.account_name}:  {account.account_amount}</p>
+           </>
          )) 
         
       ));   
