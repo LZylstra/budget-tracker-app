@@ -2,8 +2,10 @@
   display:flex;
   flex-wrap: wrap;
   background: rgb(152,222,217);
+  justify-content: center;
   background: linear-gradient(360deg, rgba(152,222,217,1) 32%, rgba(199,255,216,1) 100%);
 }
+
 .home-icon{
   margin-top:15px;
   margin-left:10px;
