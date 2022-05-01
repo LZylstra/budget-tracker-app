@@ -1,9 +1,16 @@
-.LoginPage {
-    width: 450px;
-    margin: auto;
-    color:black;
-  }
-  
+.LoginPage{
+
+  margin: auto;
+  color:black;
+
+}
 .LoginPage h2{
     text-align: center;
+}
+
+@media screen and (min-width: 680px) {
+  .LoginPage {
+    width: 450px;
+  }
+  
 }
