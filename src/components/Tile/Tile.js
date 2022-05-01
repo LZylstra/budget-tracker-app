@@ -16,10 +16,10 @@ class Tile extends Component {
      let newlist;
        newlist = list.map((allAccounts, index) => (
            allAccounts.map((account, ind)=> (
-            <>
+            <div key={account.id}>
             {/* <FontAwesomeIcon className="home_icon fa-lg" icon={faMoneyCheckAlt} /> */}
-           <p key={ind}>{account.account_name}:  {account.account_amount}</p>
-           </>
+           <p >{account.account_name}:  {account.account_amount}</p>
+           </div>
          )) 
         
       ));   
@@ -30,7 +30,10 @@ class Tile extends Component {
     let newlist;
       newlist = list.map((allBills, index) => (
           allBills.map((bill, ind)=> (
-          <p key={ind}>{bill.bill_name} : {bill.current_status}</p>
+            <div key={bill.id}>
+              <p>{bill.bill_name} : {bill.current_status}</p>
+            </div>
+
         )) 
        
      ));   
@@ -41,7 +44,10 @@ class Tile extends Component {
   let newlist;
     newlist = list.map((allDebt, index) => (
         allDebt.map((debt, ind)=> (
-        <p key={ind}>{debt.debt_name} : {debt.current_status}</p>
+          <div  key={debt.id}>
+            <p>{debt.debt_name} : {debt.current_status}</p>
+          </div>
+
       )) 
      
    ));   
@@ -59,7 +65,10 @@ class Tile extends Component {
          // console.log("if");
         }
       //  console.log(category.category_year === currentYear);
-        <p key={ind}>{category.category_name} </p>;
+      <div key={ind}>
+        <p >{category.category_name} </p>;
+      </div>
+
       }); //end accountArray map
     });
     return newlist;

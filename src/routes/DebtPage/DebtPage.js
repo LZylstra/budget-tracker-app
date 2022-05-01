@@ -10,17 +10,6 @@ class DebtPage extends Component {
     return alldebt.map((debt, ind) => (
 
       debt.map((debtitem, index) => (
-      //  console.log(accountitem)
-        // <AccountRow
-        //   id={debtitem.account_id}
-        //   name={debtitem.account_name}
-        //   amount={debtitem.account_amount}
-        //   goal_date={debtitem.goal_date}
-        //   goal={debtitem.goal_amount}
-        //   monthly_auto={debtitem.monthly_auto}
-        //   type={debtitem.account_type}
-        //   key={index}
-        // />
         <DebtBox 
             key={index}
             name={debtitem.debt_name} 
@@ -39,7 +28,7 @@ class DebtPage extends Component {
       <div className="debt_page">
         <h2 className="page_title">Debt Page</h2>
         <div className="inner_accounts_page">
-            <p>{this.renderDebtList(list)}</p>
+            <div>{this.renderDebtList(list)}</div>
         </div>
 
       </div>
